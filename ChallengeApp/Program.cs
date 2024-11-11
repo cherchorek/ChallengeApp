@@ -28,16 +28,17 @@ List<Employee> employeesList = new List<Employee>()
 };
 
 int maxResult = -1;
-string[] record = new string[3];
+string[] record = new string[4];
 
 foreach (var employee in employeesList)
 {
     if (employee.Result > maxResult)
     {
         //employeeWithMaxResult = employee.Name;
-        record[0] = employee.Name;
-        record[1] = employee.LastName;
-        record[2] = employee.Result.ToString();
+        record[0] = "Name: " + employee.Name;
+        record[1] = "Last Name: " + employee.LastName;
+        record[2] = "Age: " + employee.Age;
+        record[3] = "Wynik: " + employee.Result.ToString();
     }
 }
 

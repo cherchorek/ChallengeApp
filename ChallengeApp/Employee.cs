@@ -27,11 +27,4 @@ public class Employee
     {
         this.score.Add(number);
     }
-
-
-
-
-
-
-
 }
