@@ -1,57 +1,47 @@
-﻿int number = 4566;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
-int[] digitCount = new int[10];
+﻿using ChallengeApp;
 
-// Zliczanie wystąpień cyfr
-foreach (char c in letters)
+Employee employee1 = new Employee("Julia", "Nowak", 20);
+Employee employee2 = new Employee("Monika", "Janowska", 33);
+Employee employee3 = new Employee("Marcin", "Adrzejczak", 44);
+
+employee1.AddScore(5);
+employee1.AddScore(2);
+employee1.AddScore(1);
+employee1.AddScore(2);
+employee1.AddScore(4);
+
+employee2.AddScore(7);
+employee2.AddScore(1);
+employee2.AddScore(3);
+employee2.AddScore(2);
+employee2.AddScore(3);
+
+employee3.AddScore(8);
+employee3.AddScore(2);
+employee3.AddScore(5);
+employee3.AddScore(2);
+employee3.AddScore(5);
+
+List<Employee> employeesList = new List<Employee>()
 {
-    if (c == '0')
-    {
-        digitCount[0]++;
-    }
-    else if (c == '1')
-    {
-        digitCount[1]++;
-    }
-    else if (c == '2')
-    {
-        digitCount[2]++;
-    }
-    else if (c == '3')
-    {
-        digitCount[3]++;
-    }
-    else if (c == '4')
-    {
-        digitCount[4]++;
-    }
-    else if (c == '5')
-    {
-        digitCount[5]++;
-    }
-    else if (c == '6')
-    {
-        digitCount[6]++;
-    }
-    else if (c == '7')
-    {
-        digitCount[7]++;
-    }
-    else if (c == '8')
-    {
-        digitCount[8]++;
-    }
-    else if (c == '9')
-    {
-        digitCount[9]++;
-    }
+    employee1, employee2, employee3
+};
 
+int maxResult = -1;
+string[] record = new string[3];
+
+foreach (var employee in employeesList)
+{
+    if (employee.Result > maxResult)
+    {
+        //employeeWithMaxResult = employee.Name;
+        record[0] = employee.Name;
+        record[1] = employee.LastName;
+        record[2] = employee.Result.ToString();
+    }
 }
 
-// Wyświetlanie wyników
-Console.WriteLine($"Wyniki dla liczby: {number}");
-for (int i = 0; i < digitCount.Length; i++)
+foreach (var rec in record)
 {
-    Console.WriteLine($"Cyfra {i} => {digitCount[i]}");
+    Console.WriteLine(rec);
 }
