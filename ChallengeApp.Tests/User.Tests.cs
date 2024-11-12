@@ -1,9 +1,9 @@
 namespace ChallengeApp.Tests
 {
-    public class Tests
+    public class Tests1
     {
         [Test]
-        public void AddScoreAndCheckSummation()
+        public void UserAddScoreAndCheckSummation()
         {
             //arrange
             var user = new User("Mariusz","12345");
@@ -22,7 +22,7 @@ namespace ChallengeApp.Tests
         }
 
         [Test]
-        public void AddScoreAndCheckSummationNegativeNumbers()
+        public void UserAddScoreAndCheckSummationNegativeNumbers()
         {
             //arrange
             var user = new User("Mariusz", "12345");

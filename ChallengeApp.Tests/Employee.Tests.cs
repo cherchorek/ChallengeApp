@@ -1,9 +1,9 @@
 namespace ChallengeApp.Tests
 {
-    public class Tests1
+    public class Tests
     {
         [Test]
-        public void AddScoreAndCheckSummationforEmployee()
+        public void EmployeeAddScoreAndCheckSummationforEmployee()
         {
             //arrange
             Employee employee1 = new Employee("Julia", "Nowak", 20);
@@ -22,7 +22,7 @@ namespace ChallengeApp.Tests
         }
 
         [Test]
-        public void AddScoreAndCheckSummationNegativeNumbersforEmployee()
+        public void EmployeeAddScoreAndCheckSummationNegativeNumbersforEmployee()
         {
             //arrange
             Employee employee1 = new Employee("Julia", "Nowak", 20);
