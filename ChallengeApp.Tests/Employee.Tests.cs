@@ -1,45 +1,67 @@
+using NUnit.Framework;
+
 namespace ChallengeApp.Tests
 {
     public class Tests
     {
         [Test]
-        public void EmployeeAddScoreAndCheckSummationforEmployee()
+        public void WhenGetStatisticsCalled_ShouldReturnCorrectMax()
         {
             //arrange
-            Employee employee1 = new Employee("Julia", "Nowak", 20);
-            employee1.AddScore(5);
-            employee1.AddScore(2);
-            employee1.AddScore(1);
-            employee1.AddScore(2);
-            employee1.AddScore(4);
+            var employee = new Employee("Julia", "Nowak");
+            employee.AddGrade(5);
+            employee.AddGrade(4);
+            employee.AddGrade(2);
+            employee.AddGrade(3);
+            employee.AddGrade(2);
+           
 
             //act
-            var result = employee1.Result;
-
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(14, result);
+            Assert.AreEqual(5, statistics.Max);
         }
 
         [Test]
-        public void EmployeeAddScoreAndCheckSummationNegativeNumbersforEmployee()
+        public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             //arrange
-            Employee employee1 = new Employee("Julia", "Nowak", 20);
-            employee1.AddScore(-5);
-            employee1.AddScore(-2);
-            employee1.AddScore(-1);
-            employee1.AddScore(-2);
-            employee1.AddScore(-4);
-            employee1.AddScore(0);
+            var employee = new Employee("Julia", "Nowak");
+            employee.AddGrade(5);
+            employee.AddGrade(4);
+            employee.AddGrade(2);
+            employee.AddGrade(3);
+            employee.AddGrade(2);
+
 
             //act
-            var result = employee1.Result;
-
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(-14, result);
+            Assert.AreEqual(2, statistics.Min);
         }
+
+        [Test]
+        public void WhenGetStatisticsCalled_ShouldReturnCorrectAverage()
+        {
+            //arrange
+            var employee = new Employee("Julia", "Nowak");
+            employee.AddGrade(5);
+            employee.AddGrade(4);
+            employee.AddGrade(2);
+            employee.AddGrade(3);
+            employee.AddGrade(2);
+
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual(Math.Round(3.2,2),Math.Round(statistics.Average,2));
+        }
+
+
 
 
 
