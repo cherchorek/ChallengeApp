@@ -1,7 +1,10 @@
 ﻿using ChallengeApp;
 
-var employee = new Employee("Mariusz", "Puszczynski");
-employee.AddGrade(2);
+var employee = new Employee("Mariusz", "P");
+employee.AddGrade(2000);
+employee.AddGrade("Adam");
+employee.AddGrade(1.6);
+employee.AddGrade(99.79);
 employee.AddGrade(2);
 employee.AddGrade(6);
 var statistics = employee.GetStatistics();
